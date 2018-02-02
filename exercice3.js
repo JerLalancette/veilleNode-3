@@ -1,22 +1,11 @@
-'use strict';
+"use strict";
+/* importation du module «fs» (file system) */
+let fs = require("fs");
 
-let elm;
+/* lecture synchrone, la fonction: fs.readFileSync() 
+bloque l'éxécution des instructions suivantes */
 
-let unTableau = ['Québec', 'Ontario', 'Manitoba', 'Saskatshewan'];
+let data = fs.readFileSync('03_fichier.txt');
 
-unTableau.forEach((elm,i) => { console.log(i + ' ' + elm)})
-
-unTableau.push('Alberta')
-unTableau.push('Vancouver')
-unTableau.push('Nouveau-Brunswick')
-
-unTableau.forEach((elm,i) => { console.log(i + ' ' + elm)})
-
-/* l'approche ES6 */
-let i=0;
-
-for (elm of unTableau){
-
-console.log(elm + ' ' + i++)
-
-}
+console.log(data.toString());
+console.log("Fin du programme");
